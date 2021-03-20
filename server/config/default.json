@@ -1,0 +1,5 @@
+{
+  "MONGO_URI": "mongodb+srv://pjaew94:wnstjd77@jlc-serves.ljfsf.mongodb.net/myFirstDatabase?retryWrites=true",
+  "JWT_SECRET": "poweroverwhelming",
+  "STRIPE_KEY": "sk_test_51IUfrBJhW8qJo9NGBviil0UGU71EnkzyBJpcopwxidMibMmgf1O2PjWpqxaJIpaQQS5qNCwXbbPsC0SfUEcQErwQ00mmMBgRSK"
+}
