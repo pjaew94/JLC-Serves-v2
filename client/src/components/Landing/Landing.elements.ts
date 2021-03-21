@@ -56,7 +56,7 @@ export const LandingPageContainer = styled(PageContainer)`
   @media only screen and ${device.desktopL} {
     min-height: 1250px;
     max-height: 1250px;
-    padding: 0 10%;
+    padding: 0 12%;
   }
   @media only screen and ${device.desktopXL} {
     min-height: 1620px;
@@ -112,7 +112,7 @@ export const LandingHeading1FirstLine = styled(Heading1)`
     margin-bottom: 0.5rem;
   }
   @media only screen and ${device.desktopL} {
-    margin-bottom: ${0.5 * 1.8}rem;
+    margin-bottom: ${0.5 * 1.6}rem;
   }
   @media only screen and ${device.desktopXL} {
     margin-bottom: ${0.5 * 2.2}rem;
@@ -133,7 +133,7 @@ export const LandingHeading1Margined = styled(Heading1)`
     margin: 0 0 0.5rem 20px;
   }
   @media only screen and ${device.desktopL} {
-    margin: 0 0 ${0.5 * 1.8}rem ${20 * 1.8}px;
+    margin: 0 0 ${0.5 * 1.6}rem ${20 * 1.6}px;
   }
 
   @media only screen and ${device.desktopXL} {
@@ -156,10 +156,10 @@ export const LandingHeading3 = styled(Heading3)`
     margin: 0 0 25px 20px;
   }
   @media only screen and ${device.desktopL} {
-    margin: 0 0 ${25 * 1.8}px ${20 * 1.8}px;
+    margin: 0 0 ${25 * 1.6}px ${20 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
-    margin: 0 0 ${25 * 1.8}px ${20 * 2.2}px;
+    margin: 0 0 ${25 * 1.6}px ${20 * 2.2}px;
   }
 `;
 export const LandingParagraph = styled(Paragraph)`
@@ -181,7 +181,7 @@ export const LandingParagraph = styled(Paragraph)`
     margin: 0 0 40px 20px;
   }
   @media only screen and ${device.desktopL} {
-    margin: 0 0 ${40 * 1.8}px ${20 * 1.8}px;
+    margin: 0 0 ${40 * 1.6}px ${20 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
     margin: 0 0 ${40 * 2.2}px ${20 * 2.2}px;
@@ -198,11 +198,11 @@ export const LandingPrimaryButton = styled(Button)`
   @media only screen and ${device.laptopL} {
     margin: 0 ${40 * 0.9}px 0 ${20 * 0.9}px;
   }
-  @media only screen and ${device.desktopXL} {
+  @media only screen and ${device.desktop} {
     margin: 0 40px 0 20px;
   }
   @media only screen and ${device.desktopL} {
-    margin: 0 ${40 * 1.8}px 0 ${20 * 1.8}px;
+    margin: 0 ${40 * 1.6}px 0 ${20 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
     margin: 0 ${40 * 2.2}px 0 ${20 * 2.2}px;

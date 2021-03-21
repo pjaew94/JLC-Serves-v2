@@ -37,8 +37,8 @@ export const PictureBoarder = styled.div`
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
   @media only screen and ${device.desktopL} {
-    padding: ${15 * 1.8}px ${15 * 1.8}px ${40 * 1.8}px ${15 * 1.8}px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px ${2 * 1.8}px ${2 * 1.8}px ${2 * 1.8}px;
+    padding: ${15 * 1.6}px ${15 * 1.6}px ${40 * 1.6}px ${15 * 1.6}px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px ${2 * 1.6}px ${2 * 1.6}px ${2 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
     padding: ${15 * 2.2}px ${15 * 2.2}px ${40 * 2.2}px ${15 * 2.2}px;
@@ -63,7 +63,7 @@ export const Image = styled.img`
       width: 600px;
     }
     @media only screen and ${device.desktopL} {
-      width: 1000px;
+      width: 950px;
     }
     @media only screen and ${device.desktopXL} {
       width: 1300px;
@@ -87,7 +87,7 @@ export const HandWriting = styled.p`
     font-size: 1.2rem;
   }
   @media only screen and ${device.desktopL} {
-    font-size: ${1.2 * 1.8}rem;
+    font-size: ${1.2 * 1.6}rem;
   }
   @media only screen and ${device.desktopXL} {
     font-size: ${1.2 * 2.2}rem;

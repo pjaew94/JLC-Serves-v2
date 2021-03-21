@@ -15,6 +15,8 @@ export const AchievementsPageContainer = styled(PageContainer)`
     justify-content: space-around;
 }
   @media only screen and ${device.tablet} {
+    min-height: 200px;
+    max-height: 200px;
   }
 
   @media only screen and ${device.laptopL} {
@@ -62,8 +64,8 @@ export const AchievementsHeading1 = styled(Heading1)`
     margin-bottom: 5px;
   }
   @media only screen and ${device.desktopL} {
-    border-bottom: ${2 * 1.8}px solid ${colors.primaryColor};
-    margin-bottom: ${5 * 1.8}px;
+    border-bottom: ${2 * 1.6}px solid ${colors.primaryColor};
+    margin-bottom: ${5 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
     border-bottom: ${2 * 2.2}px solid ${colors.primaryColor};

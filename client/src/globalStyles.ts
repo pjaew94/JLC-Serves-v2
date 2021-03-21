@@ -69,7 +69,7 @@ const heading1FontSize = {
   XXS: `${heading1Size * 0.7}rem`,
   XS: `${heading1Size * 0.8}rem`,
   S: `${heading1Size * 0.9}rem`,
-  L: `${heading1Size * 1.8}rem`,
+  L: `${heading1Size * 1.6}rem`,
   XL: `${heading1Size * 2.2}rem`
 }
 
@@ -79,7 +79,7 @@ const heading2FontSize = {
   default: `${heading2Size}rem`,
   XS: `${heading2Size * 0.8}rem`,
   S: `${heading2Size * 0.9}rem`,
-  L: `${heading2Size * 1.8}rem`,
+  L: `${heading2Size * 1.6}rem`,
   XL: `${heading2Size * 2.2}rem`
 }
 
@@ -88,25 +88,43 @@ const heading3FontSize = {
   default: `${heading3Size}rem`,
   XS: `${heading3Size * 0.8}rem`,
   S: `${heading3Size * 0.9}rem`,
-  L: `${heading3Size * 1.8}rem`,
+  L: `${heading3Size * 1.6}rem`,
   XL: `${heading3Size * 2.2}rem`
 }
 
+const heading3PoppinsSize = 1.3
+const heading3PoppinsFontSize = {
+  default: `${heading3PoppinsSize}rem`,
+  XS: `${heading3PoppinsSize * 0.8}rem`,
+  S: `${heading3PoppinsSize * 0.9}rem`,
+  L: `${heading3PoppinsSize * 1.6}rem`,
+  XL: `${heading3PoppinsSize * 2.2}rem`
+}
+
 const paragraphSize = 1
-const paragraphFontSize = {
+export const paragraphFontSize = {
   default: `${paragraphSize}rem`,
   XS: `${paragraphSize * 0.8}rem`,
   S: `${paragraphSize * 0.9}rem`,
-  L: `${paragraphSize * 1.8}rem`,
+  L: `${paragraphSize * 1.6}rem`,
   XL: `${paragraphSize * 2.2}rem`
 }
-const paragraphLineSize = 1.5
+const paragraphLineSize = 2
 const paragraphLineHeight = {
   default: `${paragraphLineSize}rem`,
   XS: `${paragraphLineSize * 0.8}rem`,
   S: `${paragraphLineSize * 0.9}rem`,
-  L: `${paragraphLineSize * 1.8}rem`,
+  L: `${paragraphLineSize * 1.6}rem`,
   XL: `${paragraphLineSize * 2.2}rem`
+}
+
+const paragraphMarginBot = 0.6
+const paragraphMarginBottom = {
+  default: `${paragraphMarginBot}rem`,
+  XS: `${paragraphMarginBot * 0.8}rem`,
+  S: `${paragraphMarginBot * 0.9}rem`,
+  L: `${paragraphMarginBot * 1.6}rem`,
+  XL: `${paragraphMarginBot * 2.2}rem`
 }
 
 const buttonSize = 1.3
@@ -114,7 +132,7 @@ const buttonFontSize = {
   default: `${buttonSize}rem`,
   XS: `${buttonSize * 0.8}rem`,
   S: `${buttonSize * 0.9}rem`,
-  L: `${buttonSize * 1.8}rem`,
+  L: `${buttonSize * 1.6}rem`,
   XL: `${buttonSize * 2.2}rem`
 }
 
@@ -148,11 +166,22 @@ export const PageContainer = styled.div`
   width: 100vw;
   padding: 0 15%;
 
+
   @media only screen and ${device.laptopL} {
-    padding: 0 10%;
+
+    padding: 0 15%;
   }
   @media only screen and ${device.desktop} {
+
     padding: 0 15%;
+  }
+  @media only screen and ${device.desktopL} {
+
+    padding: 0 12%;
+  }
+  @media only screen and ${device.desktopXL} {
+    padding: 0 12%;
+    min-width: ${size.desktopXL};
   }
 `;
 
@@ -169,6 +198,7 @@ type TypesHeading = {
   width?: string;
   height?: string;
   marginBottom?: string;
+  poppins?: boolean;
 };
 export const Heading1 = styled.h1<TypesHeading>`
   color: #000;
@@ -225,29 +255,30 @@ export const Heading2 = styled.h1<TypesHeading>`
 export const Heading3 = styled.h1<TypesHeading>`
   color: #000;
   font-size: ${heading3FontSize.default};
-  font-family: "PT Serif", serif;
-  font-weight: 400;
+  font-family: ${(props) => (props.poppins ? "Poppins" : "PT Serif")}, sans-serif;
+  font-weight: ${props => props.poppins ? "700" : "400"};
   width: ${(props) => (props.width ? props.width : "auto")};
   height: ${(props) => (props.height ? props.height : "auto")};
   margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
 
   @media only screen and ${device.mobileS} {
-    font-size: ${heading3FontSize.XS}
+    font-size: ${props => props.poppins ? heading3PoppinsFontSize.XS : heading3FontSize.XS}
+
   }
   @media only screen and ${device.laptopL} {
-    font-size: ${heading3FontSize.S}
+    font-size: ${props => props.poppins ? heading3PoppinsFontSize.S : heading3FontSize.S}
   }
   @media only screen and ${device.desktop} {
-    font-size: ${heading3FontSize.default};
+    font-size: ${props => props.poppins ? heading3PoppinsFontSize.default : heading3FontSize.default};
   }
   @media only screen and ${device.desktopL} {
-    font-size: ${heading3FontSize.L};
+    font-size: ${props => props.poppins ? heading3PoppinsFontSize.L : heading3FontSize.L};
   };
   @media only screen and ${device.desktopXL} {
-    font-size: ${heading3FontSize.XL};
+    font-size: ${props => props.poppins ? heading3PoppinsFontSize.XL : heading3FontSize.XL};
   };
-
 `;
+
 
 type TypesParagraph = {
   width?: string;
@@ -269,22 +300,28 @@ export const Paragraph = styled.p<TypesParagraph>`
   @media only screen and ${device.mobileS} {
     font-size: ${paragraphFontSize.XS};
     line-height: ${paragraphLineHeight.XS};
+    margin-bottom: ${paragraphMarginBottom.XS};
+
   }
   @media only screen and ${device.laptopL} {
     font-size: ${paragraphFontSize.S};
     line-height: ${paragraphLineHeight.S};
+    margin-bottom: ${paragraphMarginBottom.S};
   }
   @media only screen and ${device.desktop} {
     font-size: ${paragraphFontSize.default};
     line-height: ${paragraphLineHeight.default};
+    margin-bottom: ${paragraphMarginBottom.default};
   }
   @media only screen and ${device.desktopL} {
     font-size: ${paragraphFontSize.L};
     line-height: ${paragraphLineHeight.L};
+    margin-bottom: ${paragraphMarginBottom.L};
   };
   @media only screen and ${device.desktopXL} {
     font-size: ${paragraphFontSize.XL};
-    line-height: ${paragraphLineHeight.XL} 
+    line-height: ${paragraphLineHeight.XL};
+    margin-bottom: ${paragraphMarginBottom.XL};
   };
 `;
 
@@ -329,7 +366,7 @@ export const Button = styled(Link)<TypesButton>`
   }
   @media only screen and ${device.desktopL} {
     font-size: ${buttonFontSize.L};
-    padding: ${20 * 1.8}px ${35 * 1.8}px;
+    padding: ${20 * 1.6}px ${35 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
     font-size: ${buttonFontSize.XL};
